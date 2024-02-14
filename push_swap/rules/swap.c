@@ -3,6 +3,13 @@
 
 void    swap(t_stack **a)
 {
+    t_stack *node;
+    t_stack *next_node;
+    node = *a;
+    (*a) = (*a)->next;
+    node->next=(*a)->next->next;
+    (*a)->next =node;
+
 
 
 }
