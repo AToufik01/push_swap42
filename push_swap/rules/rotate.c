@@ -1,4 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/15 08:56:19 by ataoufik          #+#    #+#             */
+/*   Updated: 2024/02/15 11:55:31 by ataoufik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
 
 void    rotate(t_stack **head)
 {
@@ -7,10 +19,10 @@ void    rotate(t_stack **head)
 
     curr = *head;
     node = curr;
-    while (curr)
+    while (curr ->next)
         curr = curr->next;
-    (*head) = (*head)->next;
     curr->next = node;
+    (*head) = (*head)->next;
     node->next = NULL;
 }
 

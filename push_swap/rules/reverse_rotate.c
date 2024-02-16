@@ -1,4 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/15 08:56:22 by ataoufik          #+#    #+#             */
+/*   Updated: 2024/02/15 12:11:12 by ataoufik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
 
 void    reverse_rotate(t_stack **head)
 {
@@ -7,6 +19,7 @@ void    reverse_rotate(t_stack **head)
     while (last->next->next)
         last = last->next;
     last->next->next = *head;
+    *head = last->next;
     last->next = NULL;
 }
 

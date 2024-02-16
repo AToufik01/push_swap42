@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 00:28:40 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/14 10:48:33 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/15 09:16:04 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 ///hendel error input
 void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
-long	ft_atoi(const char *str);
+long	ft_atoi(char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_putchar_fd(char c, int fd);

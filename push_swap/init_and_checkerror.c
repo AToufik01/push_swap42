@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_and_checkerror.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/15 08:56:38 by ataoufik          #+#    #+#             */
+/*   Updated: 2024/02/15 09:55:30 by ataoufik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int syntax_error(char *str)
@@ -12,8 +24,8 @@ int syntax_error(char *str)
             if(str[i + 1] == '+' || str[i + 1] == '-' || str[i + 1] == ' ')
                 return (1);
         }
-        if ((str[i] < '0' && str[i] > '9') || str[i] != '+' || str[i] != '-')
-            return (1);
+        if (str[i] < '0' && str[i] > '9')
+                return (1);
         i++;
     }
     return (0);
@@ -23,20 +35,27 @@ void    add_number_to_stack(t_stack **a, int nb)
 {
     t_stack *node;
     t_stack *curr;
-
     node = malloc(sizeof(t_stack));
     node->value = nb;
     node->index = -1;
+    node->next = NULL;
+    if ((*a) == NULL)
+    {
+        *a = node;
+        return ;
+    }
     curr = *a;
-    while(curr)
+    while(curr->next)
         curr = curr->next;
     curr->next = node;
-    node->next = NULL;
 }
 
 int number_repeat(t_stack **a, int nb)
 {
     t_stack *curr;
+    if (a == NULL || *a == NULL)
+        return (0);
+    
     curr = *a;
     while(curr)
     {
@@ -77,7 +96,7 @@ void    free_stack_a(t_stack **a)
 void    print_error_free(t_stack **a)
 {
     ft_putendl_fd("Error", 1);
-    free_stack_a(a);
+    // free_stack_a(a);
     exit(0);
 
 }
@@ -86,14 +105,13 @@ void    init_stack(t_stack **a, char **arv)
     int i;
     int j;
     char **str;
-    int nb;
+    long nb;
 
     i = 1;
     while(arv[i])
     {
         if (syntax_error(arv[i]) == 1)
             print_error_free(a);
-
         str = ft_split(arv[i], ' ');//
         j = 0;
         while(str[j])
@@ -101,10 +119,9 @@ void    init_stack(t_stack **a, char **arv)
             nb = ft_atoi(str[j]); //
             if (nb >INT_MAX || nb < INT_MIN)
                 print_error_free(a);
-            
             if (number_repeat(a, nb) == 1)
                 print_error_free(a);
-            add_number_to_stack(a,nb);
+            add_number_to_stack(a, nb);
             j++;
         }
         free2darr(str);
