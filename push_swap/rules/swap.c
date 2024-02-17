@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:56:15 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/15 11:59:31 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/16 20:10:24 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 void    swap(t_stack **a)
 {
     t_stack *node;
-    t_stack *next_node;
     node = *a;
     (*a) = (*a)->next;
     node->next=(*a)->next;
