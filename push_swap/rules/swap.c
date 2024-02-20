@@ -6,23 +6,20 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:56:15 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/16 20:10:24 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/16 18:23:01 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../push_swap.h"
 
-void    swap(t_stack **a)
+static void    swap(t_stack **a)
 {
     t_stack *node;
     node = *a;
     (*a) = (*a)->next;
     node->next=(*a)->next;
     (*a)->next =node;
-
-
-
 }
 
 void	sa(t_stack **a)

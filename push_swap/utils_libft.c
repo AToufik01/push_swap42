@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 09:04:19 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/15 09:16:14 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/17 19:04:03 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ long	ft_atoi(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		s = s * 10 + (str[i] - 48);
-		if (s > LONG_MAX && nig == 1)
-			return (-1);
-		else if (s > LONG_MAX && nig == -1)
-			return (0);
+		if (s > INT_MAX)
+			return (2147483648);
 		i++;
 	}
+	if (ft_strlen(str) != i)
+		return (2147483648);
 	return (nig * s);
 }
 

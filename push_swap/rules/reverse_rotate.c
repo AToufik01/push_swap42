@@ -6,13 +6,13 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:56:22 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/15 12:11:12 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/16 18:12:44 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void    reverse_rotate(t_stack **head)
+static void    reverse_rotate(t_stack **head)
 {
     t_stack *last;
     last = *head;

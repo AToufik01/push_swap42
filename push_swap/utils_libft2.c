@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 09:06:30 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/15 09:11:38 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/17 19:05:13 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 		i++;
 	return (i);
 }
+
 static int	ft_cont_word(const char *str, char c)
 {
 	int	cont;

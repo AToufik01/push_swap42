@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 00:28:40 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/15 09:16:04 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/20 19:38:52 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,13 @@ typedef struct s_stack
 void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 long	ft_atoi(char *str);
+int		ft_strlen(char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_putchar_fd(char c, int fd);
 void    init_stack(t_stack **a, char **arv);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+void	print_error_free(void);
 
 //*
 
@@ -45,13 +47,22 @@ t_stack *min_node(t_stack **a);
 
 //SORTE
 int		check_stack_sorted(t_stack **a);//
+int		ft_size_stack(t_stack **a);
 void	sort_stack(t_stack **a, t_stack **b);//
 void	sort_3_number(t_stack **a);
 void	sort_4_number(t_stack **a, t_stack **b);
+void	reset_stack(t_stack **a);
 void	sort_5_number(t_stack **a, t_stack **b);
-void    sort_numbers(t_stack **a, t_stack **b, int size, int div);
-
-
+void	sort_numbers(t_stack **a, t_stack **b, int size, int div);
+void	move_to_stack(t_stack **a, t_stack **b);
+// void    move_to_stack(t_stack **a, t_stack **b, int size);
+int		find_max_index(t_stack **b,int size);
+int		is_empty(t_stack **a);
+int number_move(int move, int size);
+int find_best_move(int mv1, int mv2, int size);
+// void    push_node_back(t_stack **a, t_stack **b,int pos, int size);
+void    push_node_back(t_stack **stack_a, t_stack **stack_b, int pos_max, int max_i);
+void move_and_push(t_stack **a, t_stack **b, int size, int nb);
 //*
 //rules
 void	ra(t_stack **a);

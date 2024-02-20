@@ -8,14 +8,13 @@ SRC = check_and_sort.c index.c init_and_checkerror.c push_swap.c \
 
 OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+all:$(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.c push_swap.h
 	$(CC) $(FLAGS) -c $< -o $@
-
 clean:
 	$(RM) $(OBJ)
 

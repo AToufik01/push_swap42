@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:56:46 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/16 15:07:19 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/19 14:43:27 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	sort_4_number(t_stack **a, t_stack **b)
 {
     while((*a)->index !=0)
         ra(a);
-    pb(b,a);
+    pb(a,b);
     sort_3_number(a);
     pa(a,b);
 }
@@ -55,7 +55,7 @@ void	sort_5_number(t_stack **a, t_stack **b)
 {
     while((*a)->index !=0)
         ra(a);
-    pb(b,a);
+    pb(a,b);
     reset_stack(a);
     indexi_stack(a);
     sort_4_number(a, b);
