@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 00:28:40 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/20 19:38:52 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:01:16 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,13 @@ void	sort_5_number(t_stack **a, t_stack **b);
 void	sort_numbers(t_stack **a, t_stack **b, int size, int div);
 void	move_to_stack(t_stack **a, t_stack **b);
 // void    move_to_stack(t_stack **a, t_stack **b, int size);
-int		find_max_index(t_stack **b,int size);
 int		is_empty(t_stack **a);
-int number_move(int move, int size);
-int find_best_move(int mv1, int mv2, int size);
-// void    push_node_back(t_stack **a, t_stack **b,int pos, int size);
-void    push_node_back(t_stack **stack_a, t_stack **stack_b, int pos_max, int max_i);
-void move_and_push(t_stack **a, t_stack **b, int size, int nb);
-//*
+int		find_max_index(t_stack **b,int size);
+int		number_move(int pos, int size);
+int		find_best_move(int move_1, int move_2, int size);
+void	push_node_back(t_stack **a, t_stack **b, int pos, int indx_max);
+void	move_to_stack(t_stack **a, t_stack **b);
+
 //rules
 void	ra(t_stack **a);
 void	rb(t_stack **b);
