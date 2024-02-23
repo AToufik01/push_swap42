@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:56:25 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/21 16:43:37 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:43:16 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,17 @@ static void    push(t_stack **a, t_stack **b)
     }    
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b , int i)
 {
-    ft_putendl_fd("pa" ,1);
     push(b,a);
+    if (i == 0)
+        ft_putendl_fd("pa" ,1);
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b, int i)
 {
-    ft_putendl_fd("pb", 1);
     push(a, b);
+    if(i ==0)
+        ft_putendl_fd("pb", 1);
 }
 

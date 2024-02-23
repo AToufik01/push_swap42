@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:56:22 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/21 16:43:47 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:44:12 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,24 @@ static void    reverse_rotate(t_stack **head)
     last->next = NULL;
 }
 
-void	rra(t_stack **a)
+void	rra(t_stack **a, int i)
 {
-    ft_putendl_fd("rra", 1);
     reverse_rotate(a);
+    if (i == 0)
+        ft_putendl_fd("rra", 1);
 }
 
-void	rrb(t_stack **b)
+void	rrb(t_stack **b, int i)
 {
-    ft_putendl_fd("rrb", 1);
     reverse_rotate(b);
+    if(i == 0)
+        ft_putendl_fd("rrb", 1);
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b,int i)
 {
+    reverse_rotate(a);
+    reverse_rotate(b);
+    if (i == 0)
         ft_putendl_fd("rrr", 1);
-        reverse_rotate(a);
-        reverse_rotate(b);
 }

@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:56:15 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/21 16:43:20 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:36:16 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,22 @@ static void    swap(t_stack **head)
     (*head)->next =node;
 }
 
-void	sa(t_stack **a)
+void	sa(t_stack **a, int i)
 {
     swap(a);
-    ft_putendl_fd("sa" , 1);
-    
+    if (i == 0)
+        ft_putendl_fd("sa" , 1);
 }
-void	sb(t_stack **b)
+void	sb(t_stack **b , int i)
 {
-    ft_putendl_fd("sa" , 1);
     swap(b);
+    if (i ==0)
+        ft_putendl_fd("sa" , 1);
 }
-void	ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b,int i)
 {
     swap(a);
     swap(b);
-    ft_putendl_fd("ss" , 1);
+    if(i == 0)
+        ft_putendl_fd("ss" , 1);
 }

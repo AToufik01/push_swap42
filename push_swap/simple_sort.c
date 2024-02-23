@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:56:46 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/19 14:43:27 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:49:09 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	sort_3_number(t_stack **a)
     {
         if ((*a)->index >(*a)->next->index)
         {
-            ra(a);
+            ra(a, 0);
             if (check_stack_sorted(a)!=1)
                 break;
         }
         if ((*a)->index <(*a)->next->index)
         {
-            sa(a);
+            sa(a, 0);
             if (check_stack_sorted(a)!=1)
                 break;
         }
@@ -34,10 +34,10 @@ void	sort_3_number(t_stack **a)
 void	sort_4_number(t_stack **a, t_stack **b)
 {
     while((*a)->index !=0)
-        ra(a);
-    pb(a,b);
+        ra(a, 0);
+    pb(a,b, 0);
     sort_3_number(a);
-    pa(a,b);
+    pa(a,b, 0);
 }
 
 void    reset_stack(t_stack **a)
@@ -54,10 +54,10 @@ void    reset_stack(t_stack **a)
 void	sort_5_number(t_stack **a, t_stack **b)
 {
     while((*a)->index !=0)
-        ra(a);
-    pb(a,b);
+        ra(a, 0);
+    pb(a,b, 0);
     reset_stack(a);
     indexi_stack(a);
     sort_4_number(a, b);
-    pa(a, b);
+    pa(a, b, 0);
 }

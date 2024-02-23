@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 00:28:40 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/21 15:01:16 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/23 18:00:00 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include <limits.h>
 #include <unistd.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 typedef struct s_stack
 {
 	int	value;
@@ -27,11 +31,24 @@ typedef struct s_stack
 }   t_stack;
 
 
+
+
+///bonus
+void    ft_instarcheck(t_stack **a, t_stack **b,int size);
+char	*ft_strjoin(char const *s1, char const *s2, int lens2);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*get_next_line(int fd);
+void    do_rotate(t_stack **a,t_stack **b, char *str, int len);
+void    do_reverse_rotate(t_stack **a,t_stack **b, char *str, int len);
+void    do_swap(t_stack **a,t_stack **b, char *str, int len);
+void    do_push(t_stack **a,t_stack **b, char *str, int len);
 ///hendel error input
 void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 long	ft_atoi(char *str);
+
 int		ft_strlen(char *str);
+int		ft_const_strlen(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_putchar_fd(char c, int fd);
@@ -64,18 +81,18 @@ void	push_node_back(t_stack **a, t_stack **b, int pos, int indx_max);
 void	move_to_stack(t_stack **a, t_stack **b);
 
 //rules
-void	ra(t_stack **a);
-void	rb(t_stack **b);
-void	sa(t_stack **a);
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
-void	rr(t_stack **a, t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **a, t_stack **b);
+void	ra(t_stack **a, int i);
+void	rb(t_stack **b, int i);
+void	sa(t_stack **a, int i);
+void	sa(t_stack **a, int i);
+void	sb(t_stack **b, int i);
+void	rra(t_stack **a, int i);
+void	rrb(t_stack **b, int i);
+void	ss(t_stack **a, t_stack **b, int i);
+void	rr(t_stack **a, t_stack **b, int i);
+void	rrr(t_stack **a, t_stack **b, int i);
+void	pa(t_stack **a, t_stack **b, int i);
+void	pb(t_stack **a, t_stack **b, int i);
 
 //*
 

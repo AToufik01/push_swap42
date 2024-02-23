@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 14:39:01 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/19 16:43:34 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:48:36 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void    sort_stack(t_stack **a, t_stack **b)
 	
 	size = ft_size_stack(a);
 	if (size == 2)
-		sa(a);
+		sa(a, 0);
 	else if (size == 3)
 		sort_3_number(a);
 	else if (size == 4)

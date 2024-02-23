@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:14:58 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/21 16:47:59 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:49:54 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ void	push_node_back(t_stack **a,t_stack **b,int pos,int indx_max)
 {
 	if (pos >=ft_size_stack(b) / 2)
 		while((*b)->index != indx_max)
-			rrb(b);
+			rrb(b, 0);
 	else
 		while((*b)->index != indx_max)
-			rb(b);
-	pa(a, b);
+			rb(b, 0);
+	pa(a, b, 0);
 }
 void	move_to_stack(t_stack **a, t_stack **b)
 {
@@ -74,7 +74,7 @@ void	move_to_stack(t_stack **a, t_stack **b)
 	{
 		if (ft_size_stack(b)==1)
 		{
-			pa(a, b);
+			pa(a, b, 0);
 			break;
 		}
 		pos_max = find_max_index(b,ft_size_stack(b) - 1);
@@ -85,7 +85,7 @@ void	move_to_stack(t_stack **a, t_stack **b)
 		{
 			push_node_back(a,b,pos_s_max,ft_size_stack(b) - 2);
 			push_node_back(a,b,pos_max,ft_size_stack(b));
-			sa(a);
+			sa(a, 0);
 		}
 	}
 }    
@@ -104,14 +104,14 @@ void    sort_numbers(t_stack **a, t_stack **b, int size, int div)
 		{
 			if ((*a)->index < sz_chunk)
 			{
-				pb(a, b);
+				pb(a, b, 0);
 				if ((*b)->index > mdchunk && (*a) != NULL && (*a)->index > sz_chunk)
-				    rr(a,b);
+				    rr(a,b, 0);
 				else if ((*b)->index > mdchunk)
-					rb(b);
+					rb(b, 0);
 			}
 			else
-				ra(a);
+				ra(a, 0);
 		}
 		sz_chunk = last_chunk + sz_chunk;
 		mdchunk = mdchunk + last_chunk;

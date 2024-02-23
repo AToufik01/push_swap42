@@ -6,7 +6,7 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 08:56:19 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/21 16:43:29 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:45:12 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,24 @@ static void    rotate(t_stack **head)
     node->next = NULL;
 }
 
-void	ra(t_stack **a)
+void	ra(t_stack **a, int i)
 {
-    ft_putendl_fd("ra", 1);
     rotate(a);
+    if (i ==0)
+        ft_putendl_fd("ra", 1);
 }
 
-void	rb(t_stack **b)
+void	rb(t_stack **b, int i)
 {
-    ft_putendl_fd("rb", 1);
     rotate(b);
+    if (i == 0)
+        ft_putendl_fd("rb", 1);
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b, int i)
 {
-    ft_putendl_fd("rr", 1);
     rotate(a);
     rotate(b);
+    if (i == 0)
+        ft_putendl_fd("rr", 1);
 }
