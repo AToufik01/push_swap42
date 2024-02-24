@@ -6,15 +6,15 @@
 /*   By: ataoufik <ataoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 14:39:01 by ataoufik          #+#    #+#             */
-/*   Updated: 2024/02/23 16:48:36 by ataoufik         ###   ########.fr       */
+/*   Updated: 2024/02/23 19:09:15 by ataoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_stack_sorted(t_stack **a)
+int	check_stack_sorted(t_stack **a)
 {
-	t_stack *curr;
+	t_stack	*curr;
 
 	curr = *a;
 	while (curr != NULL && curr->next != NULL)
@@ -41,19 +41,19 @@ int	ft_size_stack(t_stack **a)
 	return (i);
 }
 
-void    sort_stack(t_stack **a, t_stack **b)
+void	sort_stack(t_stack **a, t_stack **b)
 {
-	int size;
-	
+	int	size;
+
 	size = ft_size_stack(a);
 	if (size == 2)
 		sa(a, 0);
 	else if (size == 3)
 		sort_3_number(a);
 	else if (size == 4)
-		sort_4_number(a,b);
+		sort_4_number(a, b);
 	else if (size == 5)
-		sort_5_number(a,b);
+		sort_5_number(a, b);
 	else
 	{
 		if (size > 100)
@@ -62,4 +62,3 @@ void    sort_stack(t_stack **a, t_stack **b)
 			sort_numbers(a, b, size, 5);
 	}
 }
- 
